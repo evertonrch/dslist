@@ -1,7 +1,10 @@
 package com.devsuperior.dslist.model;
 
+import com.devsuperior.dslist.dto.GameDTO;
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -15,10 +18,17 @@ public class Game {
     @Column(name = "game_year")
     private Integer year;
     private String genre;
-    private String platform;
+    private String platforms;
+    private BigDecimal score;
     private String imgUrl;
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+    @Lob
     private String longDescription;
+
+    public Long getId() {
+        return id;
+    }
 
     public String getTitle() {
         return title;
@@ -32,8 +42,12 @@ public class Game {
         return genre;
     }
 
-    public String getPlatform() {
-        return platform;
+    public String getPlatforms() {
+        return platforms;
+    }
+
+    public BigDecimal getScore() {
+        return score;
     }
 
     public String getImgUrl() {
