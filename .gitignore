@@ -3,3 +3,4 @@ target/
 .mvn/*
 mvn*
 src/test/**
+.idea/*
